@@ -2,6 +2,24 @@
 
 My personal notes about bash
 
+#### Change file names in a directory
+
+Example: 
+05_h.png
+06_h.png
+
+to
+
+05_half.png
+06_half.png
+
+```bash
+for file in *_h.png
+do
+  mv "$file" "${file/_h.png/_half.png}"
+done
+```
+
 ### Conditions
 
 #### Check if a variable is empty:
@@ -102,3 +120,5 @@ selected=$(dialog --stdout \
                   20 50 30 \
                   "${regionsArray[@]}")
 ```
+
+
